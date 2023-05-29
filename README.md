@@ -11,3 +11,7 @@ password - admin
 user name - normal
 password - normal
 
+### student
+user name - student
+password - student
+

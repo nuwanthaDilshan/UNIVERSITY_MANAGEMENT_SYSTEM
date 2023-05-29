@@ -177,7 +177,7 @@ public class user extends javax.swing.JFrame {
         jLabel14.setText("User Type");
 
         usertype.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        usertype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Admin", "Normal" }));
+        usertype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Admin", "Normal", "Student" }));
         usertype.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usertypeActionPerformed(evt);

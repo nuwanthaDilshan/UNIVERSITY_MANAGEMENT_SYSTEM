@@ -96,7 +96,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        usertype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Admin", "Normal" }));
+        usertype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Admin", "Normal", "Student" }));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel4.setText("PASSWORD");
@@ -115,15 +115,12 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(username)
-                                    .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-                                    .addComponent(usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(login)
-                                .addGap(53, 53, 53)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(username)
+                                .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                                .addComponent(usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(login))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cancel)
                         .addGap(64, 64, 64))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -214,12 +211,18 @@ public class Login extends javax.swing.JFrame {
                     Admin view = new Admin();
                     view.setVisible(true);
                 
-                }else{
+                }else if(UserType.equals("Normal")){
                 
                     setVisible(false);
                     Normal view = new Normal();
                     view.setVisible(true);
                 
+                }else{
+                    
+                    setVisible(false);
+                    Student view = new Student();
+                    view.setVisible(true);
+                    
                 }
                     
                 }
