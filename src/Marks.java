@@ -144,7 +144,7 @@ public class Marks extends javax.swing.JFrame {
             }
         });
 
-        subject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        subject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4", "Business Studies" }));
 
         degree.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -347,22 +347,22 @@ public class Marks extends javax.swing.JFrame {
             stmt = con.createStatement();
             
             int sId = Integer.parseInt(id.getText());
+            String sSubject = subject.getSelectedItem().toString();
+            String sDegree = degree.getSelectedItem().toString();
             
-            String query = "SELECT * FROM marks";
+            String query = "SELECT * FROM marks WHERE id = " + sId + " AND subject = '" + sSubject + "' AND degree = '" + sDegree + "'";
             
             rs = stmt.executeQuery(query);
             
             while(rs.next())
             {
-                if(sId == rs.getInt("id"))
-                {
+                
                     name.setText(rs.getString("name"));
                     marks.setText(String.format("%s", rs.getInt("marks")));
                     semister.setText(String.format("%s", rs.getInt("semister")));
-                    subject.setSelectedItem(rs.getString("subject"));
                     year.setText(rs.getString("year"));
-                    degree.setSelectedItem(rs.getString("degree"));
-                }
+
+                
             }
         }
         catch(Exception e)
@@ -386,16 +386,16 @@ public class Marks extends javax.swing.JFrame {
             String Year = year.getText();
             String Degree = (String)degree.getSelectedItem();
             
-            String query = "UPDATE marks SET name = ?, marks = ?, semister = ?, subject = ?, year = ?, degree = ? WHERE id = ?";
+            String query = "UPDATE marks SET name = ?, marks = ?, semister = ?, year = ? WHERE degree = ? AND id = ? AND subject = ?";
             
             PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt.setString(1, stName);
             preparedStmt.setInt(2, Marks);
             preparedStmt.setInt(3, Semister);
-            preparedStmt.setString(4, Subject);
-            preparedStmt.setString(5, Year);
-            preparedStmt.setString(6, Degree);
-            preparedStmt.setInt(7, sId);
+            preparedStmt.setString(4, Year);
+            preparedStmt.setString(5, Degree);
+            preparedStmt.setInt(6, sId);
+            preparedStmt.setString(7, Subject);
 
             preparedStmt.execute();
             JOptionPane.showMessageDialog(null, "UPDATE");
@@ -414,13 +414,15 @@ public class Marks extends javax.swing.JFrame {
             stmt = con.createStatement();
             
             int sId = Integer.parseInt(id.getText());
+            String sSubject = (String) (subject.getSelectedItem());
+            String sDegree = (String) (degree.getSelectedItem());
             
-            String query = "DELETE FROM marks WHERE id ='"+sId+"' ";
+            String query = "DELETE FROM marks WHERE id ='"+sId+"' AND subject = '"+sSubject+"' AND degree = '"+sDegree+"'";
             
             stmt.executeUpdate(query);
             
             Reset();
-            JOptionPane.showMessageDialog(null, "DELETED");
+            JOptionPane.showMessageDialog(null, "DELETE");
             
             
             
