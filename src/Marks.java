@@ -80,6 +80,7 @@ public class Marks extends javax.swing.JFrame {
         degree = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -160,6 +161,13 @@ public class Marks extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
+        jButton6.setText("Go Back Loging");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -204,7 +212,9 @@ public class Marks extends javax.swing.JFrame {
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(jButton6)
+                .addGap(0, 82, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,7 +268,8 @@ public class Marks extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(jButton5)
+                    .addComponent(jButton6))
                 .addGap(190, 190, 190))
         );
 
@@ -308,7 +319,7 @@ public class Marks extends javax.swing.JFrame {
             String Year = year.getText();
             String Degree = (String)degree.getSelectedItem();
             
-            String query = "INSERT INTO marks (id, name, marks, semister, subject, year, degree) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO marks (id, name, marks, semister, subject, year, degree) VALUES (?, ?, ?, ?, ?, ?, ?)";
             
             PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt.setInt(1, sId);
@@ -426,6 +437,13 @@ public class Marks extends javax.swing.JFrame {
         Reset();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        Login log = new Login();
+        log.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -469,6 +487,7 @@ public class Marks extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
