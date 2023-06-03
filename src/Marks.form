@@ -61,13 +61,13 @@
                   </Group>
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="semister" pref="198" max="32767" attributes="0"/>
+                      <Component id="semister" max="32767" attributes="0"/>
                       <Component id="id" max="32767" attributes="0"/>
-                      <Component id="name" pref="198" max="32767" attributes="0"/>
-                      <Component id="marks" pref="198" max="32767" attributes="0"/>
-                      <Component id="year" pref="198" max="32767" attributes="0"/>
+                      <Component id="name" max="32767" attributes="0"/>
+                      <Component id="marks" max="32767" attributes="0"/>
+                      <Component id="year" max="32767" attributes="0"/>
                       <Component id="subject" alignment="0" max="32767" attributes="0"/>
-                      <Component id="degree" alignment="0" max="32767" attributes="0"/>
+                      <Component id="degree" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -95,7 +95,7 @@
                   <Component id="jButton5" min="-2" pref="73" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="82" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -155,11 +155,12 @@
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <Component id="degree" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="degree" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -273,27 +274,27 @@
         <Component class="javax.swing.JComboBox" name="subject">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-                <StringItem index="4" value="Business Studies"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="degree">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="20">
+                <StringItem index="0" value=""/>
+                <StringItem index="1" value="Business Analytics"/>
+                <StringItem index="2" value="Business Information System"/>
+                <StringItem index="3" value="Fundamental of Computer System"/>
+                <StringItem index="4" value="Mobile App Developement"/>
+                <StringItem index="5" value="Object oriented Program"/>
+                <StringItem index="6" value="Networking"/>
+                <StringItem index="7" value="Professional Practice"/>
+                <StringItem index="8" value="Project Management"/>
+                <StringItem index="9" value="Computer Programming"/>
+                <StringItem index="10" value="Advance Programming"/>
+                <StringItem index="11" value="Analytics and business Intelligence"/>
+                <StringItem index="12" value="Computer Inteligence"/>
+                <StringItem index="13" value="Professional &amp; Ethicle Issues in IT"/>
+                <StringItem index="14" value="Physiological Psychology"/>
+                <StringItem index="15" value="Cognitive Psychology"/>
+                <StringItem index="16" value="Social Psychology"/>
+                <StringItem index="17" value="Educational Psychology"/>
+                <StringItem index="18" value="Health and Human Sexuality"/>
+                <StringItem index="19" value="Organisational Psychology"/>
               </StringArray>
             </Property>
           </Properties>
@@ -329,6 +330,21 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="degree">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value=""/>
+                <StringItem index="1" value="HND in Software Engineering"/>
+                <StringItem index="2" value="HND in Psychology"/>
+                <StringItem index="3" value="BSc (Hons) Software Engineering"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
